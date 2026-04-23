@@ -1,6 +1,7 @@
 import { trpc } from "@/lib/trpc";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import ServiceNotesPanel from "@/components/ServiceNotesPanel";
 
 /**
  * Example page demonstrating how to use tRPC hooks in the frontend.
@@ -98,10 +99,7 @@ export default function ExamplePage() {
                   )}
                 </div>
 
-                {/* 
-                  YOUR TASK: Embed your <ServiceNotesPanel serviceRequestId={req.id} /> 
-                  component here to show notes for each service request.
-                */}
+                <ServiceNotesPanel serviceRequestId={req.id} />
               </CardContent>
             </Card>
           ))}

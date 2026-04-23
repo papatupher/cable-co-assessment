@@ -2,6 +2,7 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { publicProcedure, router } from "./_core/trpc";
 import { exampleRouter } from "./routers/example";
+import { serviceNotesRouter } from "./routers/service-notes";
 
 export const appRouter = router({
   auth: router({
@@ -16,11 +17,8 @@ export const appRouter = router({
   // Example router — study this pattern
   example: exampleRouter,
 
-  // ─────────────────────────────────────────────────────────────
-  // YOUR TASK: Wire your serviceNotes router here.
-  // Import it and add it to this object, e.g.:
-  //   serviceNotes: serviceNotesRouter,
-  // ─────────────────────────────────────────────────────────────
+  // Service notes router — manages internal notes for service requests
+  serviceNotes: serviceNotesRouter,
 });
 
 export type AppRouter = typeof appRouter;
